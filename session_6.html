@@ -7331,7 +7331,7 @@ a.anchor-link {
     if (!diagrams.length) {
       return;
     }
-    const mermaid = (await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs")).default;
+    const mermaid = (await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.0/mermaid.esm.min.mjs")).default;
     const parser = new DOMParser();
 
     mermaid.initialize({
@@ -7516,22 +7516,26 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Session-6:-Data-structures,-files,-and-errors">Session 6: Data structures, files, and errors<a class="anchor-link" href="#Session-6:-Data-structures,-files,-and-errors">¶</a></h1><p><em>Data Structures and Algorithms</em></p>
+<h1 id="Session-6:-Graph-algorithms-on-unweighted-graphs">Session 6: Graph algorithms on unweighted graphs<a class="anchor-link" href="#Session-6:-Graph-algorithms-on-unweighted-graphs">¶</a></h1><p><em>Data Structures and Algorithms</em></p>
 <p><em>Imperial College Business School</em></p>
 <hr/>
-<p>This session will introduce you to the following Python concepts: <em>dictionaries, sets and tuples, error handling and file input and output</em>.</p>
-<p>We have previously covered many key Python concepts, including the use of variables and functions, and the list data structure. In this session we'll learn to use some of Python's other compound data structures: dictionaries, sets, and tuples. Each of these has its own benefits, and we'll learn to pick the appropriate one for the kind of problem and data we're facing. We will also read data from files into Python.</p>
+<p>Graphs are ubiquitous, and efficiently solving graph problems is crucial to companies from Google to Facebook. We will start from graph search in unweighted graphs. We will build on our work on algorithms and data structures to study the breadth-first search algorithm and the queue data structure, seeing how the design of algorithms and data structures go in lockstep. We will also apply the algorithm to a real-world social network problem. As part of this session we'll learn to use some of Python's other compound data structures: dictionaries, sets, and tuples, which will be helpful for graphs and other further content.</p>
 <hr/>
-<h2 id="Preparation:">Preparation:<a class="anchor-link" href="#Preparation:">¶</a></h2><p><strong>Readings:</strong></p>
-<p>Guttag: Chapters 5.6-5.8, 7, 8.2, 9.</p>
+<h2 id="Preparation">Preparation<a class="anchor-link" href="#Preparation">¶</a></h2><p><strong>Readings:</strong></p>
+<p>Guttag: Chapters 5.6-5.8, 14.2.</p>
 <p>OR</p>
 <p>Sweigart, Al. Automate the Boring Stuff with Python.</p>
 <ul>
-<li><p>Chapter 5 – Dictionaries
-<a href="https://automatetheboringstuff.com/chapter5/">https://automatetheboringstuff.com/chapter5/</a></p>
-</li>
-<li><p>Chapter 8 – Files <a href="https://automatetheboringstuff.com/chapter8/">https://automatetheboringstuff.com/chapter8/</a></p>
-</li>
+<li>Chapter 5 – Dictionaries
+<a href="https://automatetheboringstuff.com/chapter5/">https://automatetheboringstuff.com/chapter5/</a></li>
+</ul>
+<p>Kun, Jeremy. Depth- and Breadth-First Search.</p>
+<ul>
+<li><a href="https://jeremykun.com/2013/01/22/depth-and-breadth-first-search/">https://jeremykun.com/2013/01/22/depth-and-breadth-first-search/</a></li>
+</ul>
+<p>Moore, Karleigh. Breadth-first search (BFS).</p>
+<ul>
+<li><a href="https://brilliant.org/wiki/breadth-first-search-bfs/">https://brilliant.org/wiki/breadth-first-search-bfs/</a></li>
 </ul>
 <p><em><strong>Optional Readings:</strong></em></p>
 <p>Miller and Ranum. Problem Solving with Algorithms and Data Structures.</p>
@@ -7544,28 +7548,27 @@ a.anchor-link {
 <p><strong>Questions:</strong></p>
 <p>Please read the material above, and think about how you would explain to your classmates:</p>
 <ul>
-<li><p>When is a dictionary useful compared to a list?</p>
-</li>
-<li><p>When and why do we use exceptions?</p>
-</li>
+<li>When is a dictionary useful compared to a list?</li>
+<li>What are three examples of everyday things that can be represented as unweighted graphs?</li>
+<li>What are assumptions made in the breadth-first search algorithm? What is the output of the algorithm?</li>
 </ul>
 <hr/>
 </div>
 </div>
 </div>
-</div>
+</div>&lt;style&gt;div.prompt {display:none}&lt;/style&gt;
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Starting-out">Starting out<a class="anchor-link" href="#Starting-out">¶</a></h2><h3 id="Submission">Submission<a class="anchor-link" href="#Submission">¶</a></h3><p>At the end of this session, you will submit the file <code>ses06.py</code> following the instructions below.</p>
+<h2 id="Submission">Submission<a class="anchor-link" href="#Submission">¶</a></h2><p>At the end of this session, you will submit the file <code>ses06.py</code> following the instructions below.</p>
 <ul>
 <li>Questions 1 - 7 are the main part of the session.</li>
-<li>Question 8 is and the exercises on Trump tweets and web scraping (separate Jupyter Notebook files) are optional. It is recommended that you work on these if you finish the required questions early, or on your own time as extra practice.</li>
+<li>Questions 8 - 9 are optional. It is recommended that you work on these if you finish the required questions early, or on your own time as extra practice.</li>
 </ul>
-<h3 id="Using-OK">Using OK<a class="anchor-link" href="#Using-OK">¶</a></h3><p>We will use a program called <code>ok</code> to test our code.</p>
+<h2 id="Using-OK">Using OK<a class="anchor-link" href="#Using-OK">¶</a></h2><p>We will use a program called <code>ok</code> to test our code.</p>
 <p>You should have OK in the Codespace for this session. The session will include instructions for running <code>ok</code> commands as we need them.</p>
 <p>For help with running <code>ok</code>, you can run</p>
 <pre><code>python ok -h
@@ -7577,19 +7580,10 @@ a.anchor-link {
 <pre><code>python ok -q function_name -v
 </code></pre>
 <p>If you get stuck with how to call <code>ok</code>, please check the first session for more detailed instructions on the system.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Question-1">Question 1<a class="anchor-link" href="#Question-1">¶</a></h2><p>Let's recap some of the Python concepts we've covered. Use the following command on the command line to start the first exercise.</p>
+<h2 id="Recap">Recap<a class="anchor-link" href="#Recap">¶</a></h2><h3 id="Question-1:-Recap">Question 1: Recap<a class="anchor-link" href="#Question-1:-Recap">¶</a></h3><p>Use the command</p>
 <pre><code>python ok -q recap -u
 </code></pre>
+<p>on the command line to recap some of the concepts we've seen earlier.</p>
 </div>
 </div>
 </div>
@@ -7965,83 +7959,26 @@ python ok -q count_characters
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Handling-exceptions">Handling exceptions<a class="anchor-link" href="#Handling-exceptions">¶</a></h2><p>In addition to bugs in our code, a program may run into an error for various reasons. It may try to open a file or scrape a website that does not exist. Or it may rely on user input that may come in the wrong format. Up to now, we have simply said that if an error comes up, this is fatal for the program, causing it to stop executing. But this is usually not very convenient: we don't want a website or program to crash at the simplest error. Instead of crashing, we can <em>handle</em> errors within programs.</p>
-<p>Errors can be alternatively thought of as <em>exceptions</em>. Most often, an error is a situation where a statement is outside Python's appropriate syntax or semantics. When we started defining functions, we used the example of converting miles to kilometers.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">miles_to_km</span><span class="p">(</span><span class="n">miles</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Convert miles to kilometers.</span>
-<span class="sd">    """</span>
-    <span class="k">return</span> <span class="n">miles</span> <span class="o">*</span> <span class="mf">1.609</span>
+<h2 id="Graphs-and-breadth-first-search">Graphs and breadth-first search<a class="anchor-link" href="#Graphs-and-breadth-first-search">¶</a></h2><h3 id="Representing-graphs">Representing graphs<a class="anchor-link" href="#Representing-graphs">¶</a></h3><p>In the previous session, we worked on object-oriented programming. We learned to represent new types of data (such as pocket monsters, nodes, and queues) as Python classes. This may start to inspire us to think of any problem in terms of elements that might be best represented as classes.</p>
+<p>In the case of graphs, we might think of graph <em>nodes</em> and <em>edges</em> as different objects for which we could write classes. A node would have at least a name, while an edge might store connections to two nodes.</p>
+<p>This is a very useful way of thinking in abstractions, especially if our objects start to become more complicated, with several attributes and related actions, like our pocket monsters. The Guttag book presents graph problems by implementing nodes and edges as classes, and graphs as another class that consists of nodes and edges,</p>
+<p>This is a great exercise for understanding OOP, but for our specific and  purposes - finding shortest paths using breadth-first search - we'll simplify it a little. Our nodes and edges won't have too many attributes, so we won't write separate classes to represent them. Like the book, we'll use a Graph class, but inside it we'll have a slightly different graph implementation without using separate classes for nodes and edges.</p>
+<p>We'll follow the <em>adjacency list</em> graph specification you learned in the lecture. More specifically, we'll store the edges of a graph in a <em>dictionary</em> such that the keys of the dictionary are the nodes, and the values are a <em>set</em> of nodes it has direct edges to (these are called its <em>child</em> nodes). This dictionary then represents all the edges in the graph.</p>
+<p>For example, the following dictionary defines the adjacency list of a directed graph with four nodes.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">adj_list</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'a'</span><span class="p">:{</span><span class="s1">'b'</span><span class="p">},</span> <span class="s1">'b'</span><span class="p">:{</span><span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">},</span> <span class="s1">'c'</span><span class="p">:{</span><span class="s1">'d'</span><span class="p">},</span> <span class="s1">'d'</span><span class="p">:</span><span class="nb">set</span><span class="p">()}</span> <span class="c1"># 'd' has no nodes starting from it, so empty set.</span>
 </pre></div>
-<p>Now, suppose that instead of using a number, we accidentally call the function with a string input <code>'9'</code>. The interpreter finds this operation is not well defined, and <em>raises an exception</em> (error) called TypeError.</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">miles_to_km</span><span class="p">(</span><span class="s1">'9'</span><span class="p">)</span>
-<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-
-  <span class="n">File</span> <span class="s2">"&lt;ipython-input-2-dd84c41e495b&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-    <span class="n">miles_to_km</span><span class="p">(</span><span class="s1">'9'</span><span class="p">)</span>
-
-  <span class="n">File</span> <span class="s2">"&lt;ipython-input-1-42a024b837ed&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="n">miles_to_km</span>
-    <span class="k">return</span> <span class="n">miles</span> <span class="o">*</span> <span class="mf">1.609</span>
-
-<span class="ne">TypeError</span><span class="p">:</span> <span class="n">can</span><span class="s1">'t multiply sequence by non-int of type '</span><span class="nb">float</span><span class="s1">'</span>
-</pre></div>
-<p>The error causes our program to terminate. But we might expect that the function is sometimes called with this kind of bad input.  If we anticipate this error, we can try to <em>handle</em> it so our program can continue executing. This is often also called <em>catching</em> errors. The idea is that instead of stopping execution, we tell Python what to do when the exception/error occurs. Our program execution can then continue.</p>
-<p>You can see this type of behaviour every day when you use a computer. For example, if you're filling out a form requiring a date on a website, and type a date in illegal format, the program does not crash but tells you what happened and prompts you again for a valid date.</p>
-<p>Catching exceptions in Python is done with the following syntax:</p>
-<div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="c1"># block of code</span>
-<span class="k">except</span> <span class="n">ExceptionName</span><span class="p">:</span>
-    <span class="c1"># code in case of error</span>
-</pre></div>
-<p>Let's return to our error-producing example:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">miles_to_km</span><span class="p">(</span><span class="n">miles</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Convert miles to kilometers.</span>
-<span class="sd">    """</span>
-    <span class="k">return</span> <span class="n">miles</span> <span class="o">*</span> <span class="mf">1.609</span>
-</pre></div>
-<p>We tried to add an integer and a string, which produced an error.</p>
-<p>With the try-except statement, we can try to catch such errors and correct the input. Suppose that we anticipate one of the inputs to be a string instead of an integer.</p>
-<p>We can change the code as follows using the above syntax in the case of TypeError to make the error clearer:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">miles_to_km</span><span class="p">(</span><span class="n">miles</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Convert miles to kilometers.</span>
-<span class="sd">    """</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">miles</span> <span class="o">*</span> <span class="mf">1.609</span>
-    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">'The input should be an integer or a float.'</span><span class="p">)</span>
-</pre></div>
-<p>Now, if we try to a string input,  we get the message instead of an error:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">miles_to_km</span><span class="p">(</span><span class="s1">'9'</span><span class="p">)</span>
-<span class="n">The</span> <span class="nb">input</span> <span class="n">should</span> <span class="n">be</span> <span class="n">an</span> <span class="n">integer</span> <span class="ow">or</span> <span class="n">a</span> <span class="nb">float</span><span class="o">.</span>
-</pre></div>
-<p>Depending on how we want to design the program, we could go further and try to convert strings to integer values within the function.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">miles_to_km</span><span class="p">(</span><span class="n">miles</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Convert miles to kilometers.</span>
-<span class="sd">    </span>
-<span class="sd">    Try to convert string inputs into integers.</span>
-<span class="sd">    """</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">miles</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
-            <span class="n">miles</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">miles</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">miles</span> <span class="o">*</span> <span class="mf">1.609</span>
-    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">'The input should be a float, an integer, or an integer string.'</span><span class="p">)</span>
-</pre></div>
-<p>Now our program works for integers in string form.</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">miles_to_km</span><span class="p">(</span><span class="s1">'9'</span><span class="p">)</span>
-<span class="mf">14.481</span>
-</pre></div>
-<p>Notice however that how we want to do handle exceptions depends on the goal of the program. What would happen with the following  function calls?</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">miles_to_km</span><span class="p">([</span><span class="mi">9</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">miles_to_km</span><span class="p">(</span><span class="s1">'9.1'</span><span class="p">)</span>
-</pre></div>
-<p>We haven't specified what to do in the latter case, which produces a <code>ValueError</code>, and we would need to handle it differently.</p>
-<p>Apart from the specific error <code>TypeError</code> that was inserted above, Python includes several types of built-in errors. Additionally, many libraries override the error classes to provide errors that suit their needs.</p>
-<p>We can always use the most generic term for error, which is <code>except:</code> with no specified type to catch all errors regardless of their type. However, in general it is good practice to be as specific as possible about the exceptions we use in order not to accidentally intercept all possible errors and problems in code.</p>
-<p>Exceptions are useful more generally than for catching errors, as they can be used to control program flow. It is also possible to define and raise our own types of exceptions in specific situations. For more information, see Guttag's chapter 7.2. It is also useful to learn to use <em>assertions</em> to confirm results of computations, see Guttag 7.3.</p>
+</div>
 </div>
 </div>
 </div>
@@ -8052,16 +7989,36 @@ python ok -q count_characters
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Question-6">Question 6<a class="anchor-link" href="#Question-6">¶</a></h3><p>Let's assume that you are given the code below:</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span><span class="w"> </span><span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<span class="o">...</span>     <span class="s2">"""divides a with b"""</span>
-<span class="o">...</span>     <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+<p>We will use a new data structure called a <code>Digraph</code>, to combine the adjacency list representation with functionality we use with graphs. The information on how to use this type is in the docstring, as seen below. If you are interested in the implementation, you may optionally visit the relevant Python module in <code>libs/</code>.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Digraph</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Directed graph.</span>
+
+<span class="sd">    Public methods:</span>
+<span class="sd">        add_node(node): Add a node to the graph.</span>
+<span class="sd">        add_edge(src, dest): Add a directed edge from src to dest.</span>
+<span class="sd">        children_of(v): Get the children of node v.</span>
+<span class="sd">        has_node(v): Check if node v exists in the graph.</span>
+<span class="sd">        has_edge(v, w): Check if there is an edge from v to w.</span>
+<span class="sd">    """</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edges</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_edges</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1"># more code</span>
 </pre></div>
-<p>Now, if you execute <code>divide(10, 2)</code>, it should work. However, in the case of <code>divide(10, 0)</code>, what does it do? Can you correct it with an exception?</p>
-<p>Complete the function <code>divide</code> in <code>ses06.py</code>. You can use the command</p>
-<div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">ok</span> <span class="o">-</span><span class="n">q</span> <span class="n">divide</span>
-</pre></div>
-<p>to test your implementation.</p>
+</div>
 </div>
 </div>
 </div>
@@ -8072,42 +8029,224 @@ python ok -q count_characters
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Reading-data-from-files">Reading data from files<a class="anchor-link" href="#Reading-data-from-files">¶</a></h2><p>Most algorithms in real applications require auxiliary input data from files, or need to export results or parameters into files. Python offers a convenient built-in way to parse files. Later on in the course, we'll look at some application-specific libraries which include their own ways of parsing files for their purposes.</p>
-<p>We can use the command <code>open(filename, flags)</code> to open a file. Here,  <code>flags</code> is <code>'r'</code> if we are reading the file, <code>'w'</code> if we are writing into it (there are also some more advanced options available, which we won't go into here).</p>
-<p>The Codespace contains the text file <code>odyssey.txt</code> in the directory <code>data/</code> (downloaded from <a href="https://www.gutenberg.org/">Project Gutenberg</a>). You can open the file by typing the following commands into the Python console (note we combine the <strong>directory</strong> with the <strong>filename and extension</strong> to create the <strong>path to the file</strong>).</p>
-<div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="s1">'data/odyssey.txt'</span>
-<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span>
+<h3 id="Undirected-graphs">Undirected graphs<a class="anchor-link" href="#Undirected-graphs">¶</a></h3><p>For an undirected graph, we can use much the same ideas as a directed graph. We've provided the <code>Graph</code> data structure for this, which has edges in two directions. The same methods are available on this structure. If you would like to view the implementation you may see it in <code>libs/</code>, but again, it is not required.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Graph</span><span class="p">(</span><span class="n">Digraph</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Undirected graph: two one-way edges for every added edge.</span>
+
+<span class="sd">    Public methods:</span>
+<span class="sd">        add_node(node): Add a node to the graph.</span>
+<span class="sd">        add_edge(src, dest): Add an undirected edge between src and dest.</span>
+<span class="sd">        children_of(v): Get the children of node v.</span>
+<span class="sd">        has_node(v): Check if node v exists in the graph.</span>
+<span class="sd">        has_edge(v, w): Check if there is an edge from v to w.</span>
+<span class="sd">    """</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_edge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="n">dest</span><span class="p">):</span>
+        <span class="n">Digraph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
+        <span class="n">Digraph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">src</span><span class="p">)</span>
 </pre></div>
-<p>The variable <code>f</code> that we have just defined contains the required information so that we can parse the text if we want to. However, we have just opened the file, not actually read its contents. Let's start reading the data:</p>
-<div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Aside:-Importing-modules">Aside: Importing modules<a class="anchor-link" href="#Aside:-Importing-modules">¶</a></h3><p>In this session, the exercises are in <code>ses06.py</code>, but the graph data structures which we've created for you are in a separate Python file at <code>libs/ses06_data_structures.py</code>. This is useful as you don't need to edit the data structures, or understand their precise implementation. Putting them in our main file would make it quite long and may add extra complexity. Furthermore, if we package our code into modules, we can later use the same code for solving different problems in different scripts.</p>
+<p>To make the data structures available to us in <code>ses06.py</code> we can use the following command, which you will see at the top of your Python file.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">libs.ses06_data_structures</span><span class="w"> </span><span class="kn">import</span> <span class="n">Graph</span><span class="p">,</span> <span class="n">Digraph</span><span class="p">,</span> <span class="n">Queue</span><span class="p">,</span> <span class="n">QueueNode</span>
 </pre></div>
-<p>What you have just done is that one line has been read from the file we opened. If we call it again, the next line will be parsed till the end of file is reached. After we're done, we should clean up by closing the file with the command</p>
-<div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>This tells Python to look for a module called <code>ses06_data_structures</code> in the <code>libs</code> directory and import the definitions <code>Graph, Digraph, Queue, QueueNode</code>. Once we run this line of code, we can use them in <code>ses06.py</code>, for example with <code>g = Graph()</code>, much in the same way we can create a dictionary with <code>d = dict()</code>.</p>
+<p>Alternatively, we could have used</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">libs.ses06_data_structures</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ds</span>
 </pre></div>
-<p>Files often contain several (thousands of) lines, so typically we loop through them and parse as many lines as we wish. Furthermore, we can automatically have the file close using the keyword <code>with - as</code>. After the indented block following <code>with</code>, the file closes automatically.</p>
-<div class="highlight"><pre><span></span><span class="c1"># parsing the first n lines of the file.</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>This would give us access to everything in the file, but giving it the name <code>ds</code>. Then we would access them through this name with the dot notation: <code>g = ds.Graph()</code>.</p>
+<p><strong>Before you run the import command, ensure the module to import is in the libs directory.</strong></p>
+<h3 id="Question-6:-Creating-a-graph">Question 6: Creating a graph<a class="anchor-link" href="#Question-6:-Creating-a-graph">¶</a></h3><p>Examine the docstring to see the methods of  <code>Digraph</code> and <code>Graph</code>. Using these methods, recreate the graph we used as an example in the lecture. Complete the function <code>create_bfs_graph</code>  in <code>ses06.py</code>.</p>
+<p>Test your implementation with</p>
+<pre><code>python ok -q create_bfs_graph
+</code></pre>
+<blockquote>
+<p><strong>Note.</strong> Due to the way the class <code>Graph</code> has been implemented, when we add an undirected edge from John to Helena, it works as an edge both ways. We don't need to repeat <code>add_edge</code> from Helena to John.</p>
+</blockquote>
+<p><strong>Exercise.</strong> (There are no tests for this exercise.) Try out the different graph methods on your created graph in the Python console:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">create_bfs_graph</span><span class="p">()</span>
+<span class="n">g</span><span class="o">.</span><span class="n">children_of</span><span class="p">(</span><span class="s1">'Helena'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">has_node</span><span class="p">(</span><span class="s1">'Donald'</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">has_edge</span><span class="p">(</span><span class="s1">'Donald'</span><span class="p">,</span> <span class="s1">'Helena'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
 </pre></div>
-<p>Alternatively to looping through the text file, we can use the commands <code>f.read()</code> to read the entire text to a single string, or <code>f.readlines()</code> to read the entire text to a list of strings containing each line of the text.</p>
-<p>The above approach for reading files works in many cases. But text files come in many shapes and forms: in particular, some of them are <em>encoded</em> in different ways to capture different character conventions. A common one is <code>utf8</code>, which captures the Unicode standard. To read a text file with a specific encoding, we can include it as an option:</p>
-<div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="s1">'data/odyssey.txt'</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Breadth-first-search">Breadth-first search<a class="anchor-link" href="#Breadth-first-search">¶</a></h3><p>Now we're ready to start implementing search algorithms. We've seen that the breadth-first search (BFS) algorithm allows us to find the shortest distances between two nodes in a (unweighted) graph. We'll implement BFS, and apply it to a large real-world dataset in the next section. The algorithm recipe is described below.</p>
+<p><strong>Algorithm</strong>: BFS(graph $G$, start vertex $s$)</p>
+<ul>
+<li>Initialize: mark all nodes unexplored except $s$ explored</li>
+<li>Use $Q$ = queue data structure, add $s$ to $Q$</li>
+<li>Main loop: While queue $Q$ is not empty:<ul>
+<li>Remove the first node of $Q$ and call it $v$</li>
+<li>For each edge $(v,w)$: if $w$ unexplored:<ul>
+<li>Mark $w$ explored</li>
+<li>Add $w$ to $Q$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The extra exercise in Session 6 asked us to implemented a queue data structure. This now proves very useful as we use a queue to store the nodes we can directly reach from already visited nodes. For your convenience, a <code>Queue</code> structure is also provided.</p>
+<h3 id="Question-7">Question 7<a class="anchor-link" href="#Question-7">¶</a></h3><p>Complete the breadth-first search algorithm in the Python code file.
+The algorithm steps are exactly those in the recipe above. We start with a graph and a starting node, and keep track of a a <em>dictionary</em> of explored nodes and a <em>queue</em> of unexplored nodes that are adjacent to explored nodes.</p>
+<p>You'll need the following <code>Queue</code> methods:</p>
+<ul>
+<li><code>q = Queue()</code> - initialize empty queue</li>
+<li><code>q.enqueue(x)</code> - add x to end of queue</li>
+<li><code>q.dequeue()</code> - pop first item of queue, return the item</li>
+<li><code>q.is_empty()</code> - check if queue is empty, return True/False</li>
+</ul>
+<p>The beauty of this is that we don't need to know the implementation details - we can just use these methods to implement the BFS algorithm. If you'd like to go through how the data structure works in detail, you can examine the code in <code>libs/ses06_data_structures.py</code>, but this is optional.</p>
+<p>You can try these methods in the Python console with the following commands:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+<span class="n">q</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="s1">'Ralf'</span><span class="p">)</span>
+<span class="n">q</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="s1">'Sophie'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+<span class="n">q</span><span class="o">.</span><span class="n">enqueue</span><span class="p">(</span><span class="s1">'Lu'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+<span class="n">first_one_out</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">dequeue</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'The first in the queue was: '</span> <span class="o">+</span> <span class="n">first_one_out</span> <span class="o">+</span> <span class="s1">', but we just popped them out.'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">is_empty</span><span class="p">())</span>
 </pre></div>
-<p><strong>Related Exercise.</strong> (No test for this exercise. Not graded.) What is the first word of the 16th line of the text?</p>
-<h3 id="Question-7">Question 7<a class="anchor-link" href="#Question-7">¶</a></h3><p>Let's write a function to count words in a book. Complete the function <code>count_words</code> in the file <code>ses06.py</code>. You can test your implementation with</p>
-<div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">ok</span> <span class="o">-</span><span class="n">q</span> <span class="n">count_words</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>To implement BFS, you will also need one of the graph methods:</p>
+<ul>
+<li><code>graph.children_of(v)</code> - returns node <code>v</code>'s neighboring nodes</li>
+</ul>
+<p>Complete the function <code>bfs</code> in <code>ses06.py</code>. You can test your implementation with</p>
+<pre><code>python ok -q bfs
+</code></pre>
+<p>In order to calculate distances, we'll add a variable <code>dists</code> (a dictionary) which keeps track of distances to all nodes. Specifically, it should be initialized to zero for the <code>start</code> node. Then, when we reach node $w$ coming from node $v$, node $w$'s distance should be set one higher than that of node $v$.</p>
+<p>After you complete the algorithm, run it on the graph we used as an example in the lecture. Do you get the same result?</p>
+<p>Note however, that for now the algorithm does not keep track of the actual shortest paths. We can construct the shortest paths using a dictionary that stores the previous node for every node visited, that is, for every node $w$ that we find, it stores the node $v$ from which we arrive.</p>
+<p>For John, there is no previous node, so the value should be <code>None</code>. For Helena, we found her first from John, so the previous node should be <code>John</code>, and so on.</p>
+<p>Complete the function <code>bfs_track_path</code> in <code>ses06.py</code>. You can test your implementation with</p>
+<pre><code>python ok -q bfs_track_path
+</code></pre>
+<p>Once you've implemented this function, you can use the function <code>print_paths</code> included in the file to print the path:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">dists</span><span class="p">,</span> <span class="n">prev_nodes</span> <span class="o">=</span> <span class="n">bfs_track_path</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="s1">'John'</span><span class="p">)</span>
+<span class="n">print_path</span><span class="p">(</span><span class="n">prev_nodes</span><span class="p">,</span> <span class="s1">'Donald'</span><span class="p">)</span>
 </pre></div>
-<p><strong>Additional Exercise:</strong> (No test for this one. Not graded.) Use the function on the Odyssey. How many times is the word <code>Odysseus</code> used? How would you find the most common words? The most common words with at least 10 characters?</p>
-<h3 id="Writing-to-a-file">Writing to a file<a class="anchor-link" href="#Writing-to-a-file">¶</a></h3><p>Writing to a file works similarly to reading from a file. When we open a file for writing data into it, we use the flag <code>'w'</code> instead of <code>'r'</code>:</p>
-<div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'test.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'hey there'</span><span class="p">)</span>
-</pre></div>
-<p>This will write the string <code>'hey there'</code> to the file <code>test.txt</code>. You may try it in the Python console.</p>
-<p>Note we must be very careful when writing to files as this will by default overwrite previous data.</p>
+</div>
 </div>
 </div>
 </div>
@@ -8126,14 +8265,12 @@ python ok -q count_characters
 <li>Click the blue/green button once (to <code>Commit</code>), and then a second time (to <code>Sync</code>).</li>
 <li>There should be no files visible in the <code>Source Control</code> menu if submission succeeded.</li>
 </ol>
-<h2 id="Review-questions">Review questions<a class="anchor-link" href="#Review-questions">¶</a></h2><p>Here are some questions to review the material we've covered today:</p>
+<h2 id="Review">Review<a class="anchor-link" href="#Review">¶</a></h2><p>How would you explain to a classmate:</p>
 <ul>
 <li>Can you think of situations when we'd like to use tuples, sets, and dictionaries instead of lists?</li>
-<li>Why and when do we use exceptions?</li>
-</ul>
-<p>To learn more about how dictionaries work, read this chapter on hashing in Miller and Ranum's online book:</p>
-<ul>
-<li><a href="https://interactivepython.org/runestone/books/published/pythonds/SortSearch/Hashing.html">https://interactivepython.org/runestone/books/published/pythonds/SortSearch/Hashing.html</a></li>
+<li>How do we represent networks as graphs?</li>
+<li>The steps of the BFS algorithm?</li>
+<li>The computational complexity of BFS?</li>
 </ul>
 </div>
 </div>
@@ -8145,23 +8282,33 @@ python ok -q count_characters
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Question-8:-Encryption">Question 8: Encryption<a class="anchor-link" href="#Question-8:-Encryption">¶</a></h3><p>Let's build one of the most widely known encryption techniques, <em>Caesar's cipher</em>. It works as follows: we start with a string <code>str_to_encrypt</code> and an encoding integer <code>n</code>. We'll then replace each letter in the string to an encrypted one by shifting the letter by n positions. For example, if we set n = 1, each <code>a</code> becomes <code>b</code>, <code>b</code> becomes <code>c</code> and so forth. We'll write a function that performs this encryption.</p>
-<p>Complete the functions <code>caesar_cipher_encrypt</code> and <code>caesar_cipher_decrypt</code> in <code>ses06_extra.py</code>. You can test your implementation with</p>
-<div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">ok</span> <span class="o">-</span><span class="n">q</span> <span class="n">caesar_cipher_encrypt</span>
-<span class="n">python</span> <span class="n">ok</span> <span class="o">-</span><span class="n">q</span> <span class="n">caesar_cipher_decrypt</span>
+<h2 id="Optional-Exercises">Optional Exercises<a class="anchor-link" href="#Optional-Exercises">¶</a></h2><h3 id="Small-worlds-and-Kevin-Bacon-numbers">Small worlds and Kevin Bacon numbers<a class="anchor-link" href="#Small-worlds-and-Kevin-Bacon-numbers">¶</a></h3><p>We'll next use the BFS algorithm to examine the small worlds phenomenon on a large movie dataset from the Internet Movie Database. The idea simple: everyone in the world is purportedly connected by a surprisingly small number of connections in a social graph. You'll test this idea by finding the distances between Hollywood actors. Connections between actors are defined as movies where they acted together. For example, the prolific actor Kevin Bacon is said to be very well connected by this measure.</p>
+<p>The file <code>moviesg.txt</code> contains a small sample of movie data; a larger sample is provided in <code>movies.txt</code>. These data are available freely from IMDB, the cleaned data is courtesy of Robert Sedgewick, Princeton University. The function <code>read_movie_data</code> is provided in the code file to read this data into a graph.</p>
+<p>Make sure the data is in the same directory in VS Code before reading the data.</p>
+<h3 id="Question-8">Question 8<a class="anchor-link" href="#Question-8">¶</a></h3><p>Use your BFS implementation in <code>ses06.py</code> to find the shortest distances and paths from Kevin Bacon to actors Nicole Kidman and Marlon Brando. What is the largest distance from Kevin Bacon in the graph? What is the distribution of distances? Notice that the algorithm will output double distances with these data, as it will count the distance from an actor to a movie as one edge and from the movie to another actor as another one.</p>
+<p>There are no tests for this question - it is left for you to explore the movie network. What are the largest distances from Kevin Bacon you can find?</p>
+<p>Here are some ideas to get you started:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">read_movie_data</span><span class="p">(</span><span class="s2">"movies.txt"</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">'Bacon, Kevin'</span>
+<span class="n">print_children</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+
+<span class="n">dists</span><span class="p">,</span> <span class="n">prev_nodes</span> <span class="o">=</span> <span class="n">bfs_track_path</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+
+<span class="n">to_find</span> <span class="o">=</span> <span class="s1">'Kidman, Nicole'</span>
+<span class="n">print_path</span><span class="p">(</span><span class="n">prev_nodes</span><span class="p">,</span> <span class="n">to_find</span><span class="p">)</span>
 </pre></div>
-<p>Once you've implemented the encryption, how can you decrypt most easily?</p>
 </div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Recommended:-Working-with-data">Recommended: Working with data<a class="anchor-link" href="#Recommended:-Working-with-data">¶</a></h2><p>Next, please see the exercises on working with data in <code>pandas.ipynb</code>. There is no submission, but work on these when you can, as they will support you for Homework 2.</p>
 </div>
 </div>
 </div>
@@ -8172,7 +8319,30 @@ python ok -q count_characters
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Optional:-Modules-and-libraries;-Trump-tweets-revisited">Optional: Modules and libraries; Trump tweets revisited<a class="anchor-link" href="#Optional:-Modules-and-libraries;-Trump-tweets-revisited">¶</a></h2><p>In the <code>optional/</code> directory, there are optional exercises on analysing Trump tweets from JSON data in the Jupyter Notebook file <code>trump_tweets.ipynb</code> and on web scraping in the Jupyter Notebook file <code>web_scraping.ipynb</code>.</p>
+<h3 id="Depth-first-search">Depth-first search<a class="anchor-link" href="#Depth-first-search">¶</a></h3><p>Another useful and widely applied graph-search algorithm is depth-first search (DFS). The idea resembles that of BFS. From a starting node, we explore aggressively in one direction until we cannot do it anymore. Then we trace back our steps until we can explore something new, and repeat. We can think of this as the approach of exploring a maze - much like in the story of <a href="https://en.wikipedia.org/wiki/Theseus#The_myth_of_Theseus_and_the_Minotaur">Theseus and the Minotaur</a>.</p>
+<p>Your task is to implement this algorithm in Python, as per the recipe below. The algorithm itself is very similar to BFS. The main difference is that in BFS we were using a queue: a first-in first-out data structure. This allowed us to explore the graph in layers. With DFS, we want to explore the graph depths aggressively, so instead we need a first-in last-out data structure. The data structure suitable for this is called a <em>stack</em>, but it can be implemented conveniently in Python using a list without loss of efficiency. We'll use list operations to append and pop in the end of the list as appropriate.</p>
+<p><strong>Algorithm</strong> (DFS):</p>
+<ul>
+<li>Pick a starting node $s$ and initialize set of explored nodes as empty but for $s$</li>
+<li>Initialize an empty list $L$ of reachable nodes, append $s$ to list</li>
+<li>While $L$ is not empty:<ul>
+<li>Pop last item of $L$ as current node $v$</li>
+<li>For each edge $(v,w)$: if $w$ unexplored:<ul>
+<li>Mark $w$ explored</li>
+<li>Append $w$ to end of $L$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Notice how closely this resembles to BFS. When you implement the algorithm, you're also asked to keep track of two things using dictionaries: the previous node where each node was reached, and the order in which they were popped from the list. These allow you to see the order in which the algorithm goes through the nodes, and compare to BFS.</p>
+<h3 id="Question-9">Question 9<a class="anchor-link" href="#Question-9">¶</a></h3><p>Complete the function <code>dfs</code> in the file <code>ses06_extra.py</code>. You can test your implementation with</p>
+<pre><code>python ok -q dfs
+</code></pre>
+<p>Note that the test graph for DFS is slightly different from the one we used in the class.</p>
+<p>Notice also that the tests for this exercise are not very comprehensive. This is because we're using unordered data structures (sets, dictionaries) and therefore the exact search order of your algorithm may not be the same on all computers. If you'd like to get more feedback on your implementation, ask a tutor to look at your code and results.</p>
+<p>Use the algorithm to search through the example from the class. How different is the DFS approach from BFS in this case?</p>
+<p>We used BFS to find shortest paths in a graph - is DFS as good for this purpose? Search online for comparisons on what kinds of problems you would rather solve with the two graph search approaches.</p>
 </div>
 </div>
 </div>

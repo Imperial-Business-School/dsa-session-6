@@ -1,14 +1,15 @@
 test = {
-  'name': 'test_ses06_solution_count_words_1',
+  'name': 'test_ses06_solution_bfs_0',
   'points': 1,
   'suites': [
     {
       'cases': [
         {
           'code': r"""
-          >>> x = count_words('it is what it is')
-          >>> print(x['it'])
-          2
+          >>> ex_graph = create_bfs_graph()
+          >>> bfs_dists = bfs(ex_graph, 'John')
+          >>> [bfs_dists['Donald'], bfs_dists['Jared']]
+          [4, 3]
           """,
           'hidden': False
         }

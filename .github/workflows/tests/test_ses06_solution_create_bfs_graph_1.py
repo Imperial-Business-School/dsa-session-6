@@ -1,13 +1,14 @@
 test = {
-  'name': 'test_ses06_solution_divide_0',
+  'name': 'test_ses06_solution_create_bfs_graph_1',
   'points': 1,
   'suites': [
     {
       'cases': [
         {
           'code': r"""
-          >>> divide(10, 2)
-          5.0
+          >>> ex_graph = create_bfs_graph()
+          >>> [x in ex_graph.children_of('Helena') for x in ['John', 'Helena', 'Donald', 'Paul']]
+          [True, False, False, True]
           """,
           'hidden': False
         }

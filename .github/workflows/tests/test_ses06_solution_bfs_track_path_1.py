@@ -1,14 +1,15 @@
 test = {
-  'name': 'test_ses06_solution_count_words_0',
+  'name': 'test_ses06_solution_bfs_track_path_1',
   'points': 1,
   'suites': [
     {
       'cases': [
         {
           'code': r"""
-          >>> x = count_words('test sentence')
-          >>> print(x['test'])
-          1
+          >>> ex_graph = create_bfs_graph()
+          >>> bfs_dists, bfs_paths = bfs_track_path(ex_graph, 'John')
+          >>> [bfs_dists['Donald'], bfs_dists['Jared']]
+          [4, 3]
           """,
           'hidden': False
         }

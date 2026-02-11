@@ -9,12 +9,13 @@
     "tests/test_ses06_solution_count_characters_1.py": "ok_test",
     "tests/test_ses06_solution_count_characters_2.py": "ok_test",
     "tests/test_ses06_solution_count_characters_3.py": "ok_test",
-    "tests/test_ses06_solution_count_words_0.py": "ok_test",
-    "tests/test_ses06_solution_count_words_1.py": "ok_test",
-    "tests/test_ses06_solution_divide_0.py": "ok_test",
-    "tests/test_ses06_solution_divide_1.py": "ok_test",
     "tests/test_ses06_solution_print_dict_values_0.py": "ok_test",
-    "tests/test_ses06_solution_print_dict_values_1.py": "ok_test"
+    "tests/test_ses06_solution_print_dict_values_1.py": "ok_test",
+    "tests/test_ses06_solution_bfs_0.py": "ok_test",
+    "tests/test_ses06_solution_bfs_track_path_0.py": "ok_test",
+    "tests/test_ses06_solution_bfs_track_path_1.py": "ok_test",
+    "tests/test_ses06_solution_create_bfs_graph_0.py": "ok_test",
+    "tests/test_ses06_solution_create_bfs_graph_1.py": "ok_test"
   },
   "protocols": [
     "file_contents",
